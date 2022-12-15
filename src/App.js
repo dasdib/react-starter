@@ -1,5 +1,13 @@
 import React from "react";
+import Comp1 from "./components/comp1";
+import Comp2 from "./components/Comp2";
 const App = () => {
-  return <div>My first react app w</div>;
+  return (
+    <>
+      <p>This is demo app</p>
+      <Comp1 />
+      <Comp2 />
+    </>
+  );
 };
 export default App;
