@@ -15,7 +15,8 @@ const env = process.env.NODE_ENV || "development";
 //   );
 // };
 
-module.exports = () => {
+module.exports = (args) => {
+  console.log("arges", args);
   //const { env, addons: addonsArg } = argv;
   // if (!isProduction) {
   //   throw new Error(buildValidations.ERR_NO_ENV_FLAG);

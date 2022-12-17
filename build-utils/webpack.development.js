@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 const config = {
   mode: "development",
   entry: {
-    app: `${commonPaths.appEntry}/index.js`,
+    app: `${commonPaths.appEntry}/index.jsx`,
   },
   output: {
     filename: "[name].[fullhash].js",
@@ -21,7 +21,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           {

@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm run prebuild && cross-env NODE_ENV=development webpack serve",
-    "dev:bundleanalyzer": "npm run prebuild && npm run dev --analyze",
+    "dev:analyzer": "npm run prebuild && cross-env NODE_ENV=development webpack serve --env analyze=true",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack",
-    "build:bundleanalyzer": "npm run build --analyze"
+    "build:analyzer": "npm run build --analyze"
   },
   "keywords": [
     "react",

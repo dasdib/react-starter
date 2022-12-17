@@ -1,22 +1,22 @@
-const commonPaths = require('./common-paths');
+const commonPaths = require("./common-paths");
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    app: [`${commonPaths.appEntry}/index.js`],
+    app: [`${commonPaths.appEntry}/index.jsx`],
   },
   output: {
-    filename: 'static/[name].[fullhash].js',
+    filename: "static/[name].[fullhash].js",
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
       },
       {
         test: /\.css$/,
@@ -28,20 +28,20 @@ const config = {
             },
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               importLoaders: 1,
               sourceMap: true,
               esModule: true,
               modules: {
-                mode: 'local',
-                exportLocalsConvention: 'camelCaseOnly',
+                mode: "local",
+                exportLocalsConvention: "camelCaseOnly",
                 namedExport: true,
               },
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
           },
         ],
       },
@@ -49,7 +49,7 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[fullhash].css',
+      filename: "styles/[name].[fullhash].css",
     }),
   ],
 };

@@ -1,6 +1,9 @@
+const path = require("path");
 const commonPaths = require("./common-paths");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = {
   output: {
@@ -21,11 +24,17 @@ const config = {
     },
   },
   */
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"],
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: `public/index.html`,
       favicon: `public/favicon.ico`,
+      title: "My React App",
     }),
+    new BundleAnalyzerPlugin({ generateStatsFile: true }),
   ],
 };
 
