@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 const Comp1 = () => {
   const [compState, setCompState] = useState(0);
   return (

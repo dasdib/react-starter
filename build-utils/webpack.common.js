@@ -1,16 +1,14 @@
-const path = require("path");
-const commonPaths = require("./common-paths");
+const path = require('path');
+const commonPaths = require('./common-paths');
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   output: {
     path: commonPaths.outputPath,
-    publicPath: "/",
+    publicPath: '/',
   },
-  target: "web", // default target
+  target: 'web', // default target
   /*  optimization: {
     splitChunks: {
       cacheGroups: {
@@ -25,16 +23,15 @@ const config = {
   },
   */
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"],
-    modules: [path.resolve(__dirname, "src"), "node_modules"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: `public/index.html`,
       favicon: `public/favicon.ico`,
-      title: "My React App",
+      title: 'My React App',
     }),
-    new BundleAnalyzerPlugin({ generateStatsFile: true }),
   ],
 };
 

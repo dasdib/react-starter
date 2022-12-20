@@ -1,18 +1,18 @@
-const commonPaths = require("./common-paths");
-const path = require("path");
+const commonPaths = require('./common-paths');
+const path = require('path');
 const port = process.env.PORT || 3000;
 const config = {
-  mode: "development",
+  mode: 'development',
   entry: {
     app: `${commonPaths.appEntry}/index.jsx`,
   },
   output: {
-    filename: "[name].[fullhash].js",
+    filename: '[name].[fullhash].js',
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     port: port,
@@ -25,7 +25,7 @@ const config = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
         ],
       },
@@ -33,18 +33,18 @@ const config = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader",
+            loader: 'style-loader',
             options: {
               esModule: true,
             },
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               esModule: true,
               modules: {
-                mode: "local",
-                exportLocalsConvention: "camelCaseOnly",
+                mode: 'local',
+                exportLocalsConvention: 'camelCaseOnly',
                 namedExport: true,
               },
             },

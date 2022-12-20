@@ -7,10 +7,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm run prebuild && cross-env NODE_ENV=development webpack serve",
-    "dev:analyzer": "npm run prebuild && cross-env NODE_ENV=development webpack serve --env analyze=true",
+    "dev:analyzer": "npm run dev && webpack --json > stats.json && webpack-bundle-analyzer stats.json",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack",
-    "build:analyzer": "npm run build --analyze"
+    "build:analyzer": "npm run build && webpack --json > stats.json && webpack-bundle-analyzer stats.json",
+    "lint": "npx eslint ./src --ext .js,.jsx",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "npx prettier --write \"**/*.+(js|jsx|json)\"",
+    "precommit": "npm run lint"
   },
   "keywords": [
     "react",

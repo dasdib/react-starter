@@ -1,6 +1,6 @@
-import React from "react";
-import Comp1 from "./components/comp1";
-import Comp2 from "./components/Comp2";
+import React from 'react';
+import Comp1 from './components/comp1';
+import Comp2 from './components/Comp2';
 const App = () => {
   return (
     <>
